@@ -1,0 +1,29 @@
+{% extends '@User/layout.html.twig' %}
+
+{% block title %}Registro {% endblock %}
+
+{% block content %}
+
+{{ form_start(form) }}
+
+<div class="field_w3ls">
+    <div class="field-group">
+    {{ form_widget(form.username) }}
+    </div>
+    <div class="field-group">
+    {{ form_widget(form.email) }}
+    </div>
+    <div class="field-group">
+    {{ form_widget(form.plainPassword.first) }}
+    </div>
+    <div class="field-group">
+    {{ form_widget(form.plainPassword.second) }}
+    </div>
+</div>
+
+<div class="wthree-field">
+        <input id="saveForm" name="saveForm" type="submit" value="Registrar" />
+</div>    
+{{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends '@User/layout.html.twig' %}
+
+{% block title %}Login {% endblock %}
+
+{% block content %}
+
+{% if error %}
+    <div class="text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+                <form action="{{ path('login') }}" method="post">
+                    <div class="field_w3ls">
+                        <div class="field-group">
+                            <input name="_username" id="username" type="text" value="{{ last_username }}" placeholder="username" required>
+                        </div>
+                        <div class="field-group">
+                            <input id="password" type="password" class="form-control" name="_password" value="" placeholder="Password">
+                            <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_target_path" value="{{path('homepage')}}" />
+                    <div class="wthree-field">
+                        <input id="saveForm" name="saveForm" type="submit" value="Login" />
+                    </div>
+                    <ul class="list-login">
+                        <li class="switch-agileits">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                                keep me signed in
+                            </label>
+                        </li>
+                        <li>
+                            <a href="#" class="text-right">forgot password?</a>
+                        </li>
+                        <li class="clearfix"></li>
+                    </ul>
+                </form>
+
+{% endblock %}
+
+
+{#
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form action="{{ path('login') }}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="_password" />
+
+
+    <input type="hidden" name="_target_path" value="{{path('homepage')}}" />
+
+    <button type="submit">login</button>
+</form>
+
+#}
