@@ -21,10 +21,10 @@ composer dump-autoload
 
 #Agregar en app/config/routing.yml
 
-user:
-    resource: "@UserBundle/Controller/"
-    type:     annotation
-    prefix:   /    
+            user:
+                resource: "@UserBundle/Controller/"
+                type:     annotation
+                prefix:   /    
 
 #Agregar en app/config/services.yml
 
